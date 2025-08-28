@@ -12858,3 +12858,98 @@ textarea.form-control-styled {
     background-color: #e9ecef;
     border-radius: 5px;
 }
+
+
+/* Gallery section */
+.gallery-section .section-title h2 {
+    color: #333;
+}
+
+.single-gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.single-gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.single-gallery-item a {
+    position: relative;
+    display: block;
+}
+
+/* Styles pour l'icône d'œil */
+.gallery-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
+    z-index: 2; /* S'assure que l'icône est au-dessus du survol */
+}
+
+/* Effet de survol sur la photo */
+.single-gallery-item:hover .gallery-icon {
+    opacity: 1;
+}
+
+/* Changement de couleur de l'icône au survol */
+.single-gallery-item:hover .gallery-icon {
+    color: #007bff; /* Couleur de survol, ajustez-la selon vos besoins */
+}
+
+/* Effet d'overlay au survol */
+.single-gallery-item a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.single-gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.single-gallery-item:hover a::after {
+    opacity: 1;
+}
+
+/* Styles pour la modale */
+.modal-dialog-centered {
+    min-height: calc(100% - 3.5rem);
+    display: flex;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: transparent !important;
+}
+
+.modal-header .btn-close {
+    filter: invert(100%);
+}
+
+#modalImage {
+    max-width: 100%;
+    max-height: 80vh; /* Limite la hauteur de l'image pour les grands écrans */
+}
+
+.modal-body {
+    padding-top: 0;
+}
