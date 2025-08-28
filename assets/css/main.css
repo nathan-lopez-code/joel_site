@@ -13203,3 +13203,6 @@ textarea.form-control-styled {
     right: 20px;
 }
 
+li a .active{
+    color : var(--theme) !important;
+}
