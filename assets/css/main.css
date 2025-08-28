@@ -11823,21 +11823,7 @@ p.sticky-label {
   margin-bottom: 1.5em;
 }
 
-.contact-section {
-  position: relative;
-}
-.contact-section::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  content: "";
-  background-color: var(--bg3);
-  left: 20%;
-}
+
 @media (max-width: 1399px) {
   .contact-section::before {
     left: 0;
@@ -12676,7 +12662,7 @@ p.sticky-label {
 }
 
 .contact-form-wrapper h3 {
-  color: #fff; /* Couleur du titre du formulaire */
+  color: #000; /* Couleur du titre du formulaire */
   margin-bottom: 25px;
   text-align: center;
 }
@@ -12688,10 +12674,10 @@ p.sticky-label {
 .form-control-styled {
   width: 100%;
   padding: 15px 20px;
-  background-color: rgba(255, 255, 255, 0.08); /* Fond des champs de saisie */
+  background-color: rgba(222, 208, 208, 0.08); /* Fond des champs de saisie */
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
-  color: #fff; /* Couleur du texte saisi */
+  color: #000; /* Couleur du texte saisi */
   font-size: 16px;
   transition: all 0.3s ease;
 }
@@ -12742,14 +12728,13 @@ textarea.form-control-styled {
   font-size: 18px;
 }
 
-/* Ajustements pour les informations de contact */
-/* Section de contact */
+
 .contact-section {
   position: relative;
-  color: #fff;
+  color: #000;
 }
 
-/* Retrait du fond blanc sur le conteneur du formulaire pour qu'il soit transparent */
+
 .contact-form-wrapper {
   background: transparent;
   padding: 50px;
@@ -12758,23 +12743,23 @@ textarea.form-control-styled {
 
 /* Champs de formulaire */
 .contact-form .form-control {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(99, 147, 252, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #fff;
+  color: #000;
   padding: 15px 20px;
   border-radius: 5px;
   transition: all 0.3s ease;
 }
 
 .contact-form .form-control:focus {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(123, 127, 243, 0.05);
   border-color: #007bff;
   box-shadow: none;
   outline: none;
 }
 
 .contact-form .form-control::placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: black;
 }
 
 .contact-form textarea.form-control {
@@ -12821,7 +12806,7 @@ textarea.form-control-styled {
 }
 
 .social-links a:hover {
-  color: #007bff;
+  color: var(--theme);
 }
 
 
@@ -12859,4 +12844,17 @@ textarea.form-control-styled {
 }
 .footer-bottom-4 p a {
   color: var(--theme);
-}/*# sourceMappingURL=main.css.map */
+}
+
+.progress-bar {
+    width: 0;
+    transition: width 2s ease-in-out;
+    background-color: var(-theme);
+    height: 100%;
+}
+
+.progress {
+    height: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+}
