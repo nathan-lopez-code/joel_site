@@ -12779,9 +12779,29 @@ textarea.form-control-styled {
   transition: all 0.3s ease;
 }
 
+
 .theme-btn:hover {
   background-color: #0056b3;
   transform: translateY(-2px);
+}
+
+.theme-btn-outline {
+    display: inline-block;
+    padding: 7px 30px;
+    background-color: transparent;
+    color: #007bff;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.theme-btn-outline:hover {
+    background-color: #007bff;
+    color: #fff;
+    transform: translateY(-2px);
 }
 
 /* Icônes de contact */
@@ -13009,3 +13029,177 @@ textarea.form-control-styled {
     padding: 0.75rem 2rem;
     font-weight: 600;
 }
+
+     /* Styles pour la section du parcours professionnel */
+ .timeline-parcours {
+     position: relative;
+     padding-left: 0; /* On retire le padding initial */
+     margin-top: 50px;
+ }
+
+/* La ligne verticale est maintenant positionnée au centre entre les deux colonnes */
+.timeline-parcours::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%; /* Positionne la ligne au centre horizontal */
+    transform: translateX(-50%);
+    height: 100%;
+    width: 2px;
+    background-color: #ddd;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Le point sur la ligne de temps est aussi au centre */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 8px;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--theme);
+    border: 2px solid #fff;
+    z-index: 1;
+}
+
+/* Côté gauche : les dates */
+.timeline-date {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-right: 30px;
+    text-align: right;
+}
+
+.timeline-date h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #666;
+}
+
+/* Côté droit : le contenu */
+.timeline-content {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-left: 30px;
+    text-align: left;
+}
+
+.timeline-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.timeline-content .company {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.timeline-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.timeline-content ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 5px;
+}
+
+.timeline-content ul li::before {
+    content: '\2022';
+    color: var(--theme);
+    font-size: 1.2em;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Effet de fondu progressif */
+.timeline-fade {
+    opacity: 0.5;
+}
+
+.timeline-fade-out {
+    opacity: 0;
+    height: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+}
+
+
+@media (max-width: 767px) {
+    .timeline-parcours::before {
+        left: 20px;
+        transform: none;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 30px;
+    }
+
+    .timeline-item::before {
+        left: 14px;
+        transform: none;
+    }
+
+    .timeline-date {
+        flex: none;
+        max-width: none;
+        text-align: left;
+        padding-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .timeline-content {
+        flex: none;
+        max-width: none;
+        padding-left: 0;
+    }
+}
+
+
+.floating-cv-btn {
+    position: fixed;
+    bottom: 20px;
+    right: -300px;
+    z-index: 999;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: right 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+}
+
+.floating-cv-btn:hover {
+    background-color: #0056b3;
+}
+
+.floating-cv-btn i {
+    margin-right: 10px;
+}
+
+.floating-cv-btn.visible {
+    right: 20px;
+}
+
